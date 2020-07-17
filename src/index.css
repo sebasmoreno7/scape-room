@@ -1,13 +1,175 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background: url("/bg.png");
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.logo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.logo img {
+  width: 10rem;
+}
+
+.logo figcaption {
+  background: white;
+  font-size: 3rem;
+  font-style: oblique;
+  font-weight: bold;
+  margin-left: 1rem;
+  padding: 1rem;
+  transform: skew(-15deg) rotate(-3deg);
+}
+
+.students {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.student {
+  align-items: center;
+  background: #151515;
+  border-radius: 0.5rem;
+  box-shadow: 18px 18px 0 0 white;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 5% 15%;
+  padding: 2rem;
+  text-align: center;
+  transform: skew(-15deg) rotate(-3deg);
+}
+
+.student:hover {
+  box-shadow: 8px 8px 0 0 white;
+}
+
+.student h2 {
+  font-size: 1.2rem;
+  font-style: oblique;
+  font-weight: normal;
+  margin-bottom: 2rem;
+}
+
+.student h2 .name {
+  color: #e30451;
+  display: inline-block;
+  font-weight: bold;
+  margin: 0 0.25rem;
+  text-decoration: underline;
+  transform: scale(1.2);
+}
+
+.student small {
+  transform: skew(15deg) rotate(3deg);
+  font-size: 1.5rem;
+}
+
+.student button {
+  background: #5edddf;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  transform: skew(15deg) rotate(3deg) scale(0.8);
+}
+
+.student button:hover {
+  background: #48aaac;
+}
+
+/*
+    deBakatas variables
+*/
+:root {
+  --dk-pink: #e30451;
+  --dk-black: #444;
+  --dk-green: #34fcd8;
+  --dk-blue: #7dc1fe;
+  --dk-effect: skew(-15deg) rotate(-3deg);
+}
+
+*,
+*::after,
+*::before {
+  border: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  object-fit: contain;
+  padding: 0;
+  transition: all 0.15s ease-in-out;
+  color: var(--dk-black);
+}
+
+html,
+body,
+body > * {
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  background: transparent;
+  cursor: pointer;
+}
+
+img[src=""],
+img[src="undefined"],
+img:not([src]) {
+  display: none;
 }
