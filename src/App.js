@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import Casa from './Components/Home';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import casa from './Home';
-import Cuarto from './Cuarto';
-const App= () => <BrowserRouter>
-  <Switch>
-    <Route path="/" exact component= {casa}></Route>
-    <Route path="/extern" exact component= {Cuarto}></Route>
-    <Route component={() => <div>404</div>}></Route>
-  </Switch>
-</BrowserRouter>
+import Cuarto from './Components/Cuarto';
+import Error from './Components/Error';
+import CuartoNext from './Components/CuartoNext';
+class App extends Component {
+  render(){
+
+    return(
+      <BrowserRouter> 
+      <Switch> 
+        <Route path="/" exact component={Casa}></Route>
+        <Route path="/cuarto1" exact component={Cuarto}></Route>
+        <Route path="/cuarto2" exact component={CuartoNext}></Route>
+        <Route component={Error}></Route>
+      </Switch>
+      </BrowserRouter>
+    )
+  }
+}
   
 
 export default App;
