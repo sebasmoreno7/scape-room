@@ -9,7 +9,10 @@
   --dk-effect: skew(-15deg) rotate(-3deg);
   --font-serif: Georgia, "Times New Roman", Times, serif;
 }
-
+.grid {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
 *,
 *::after,
 *::before {

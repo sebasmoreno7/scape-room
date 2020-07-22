@@ -10,15 +10,21 @@ import agua from '../images/agua.png';
 class Cuarto extends Component{
     render() {
         return(
-            <main> 
-                <img src={borde} alt="Borde" />
-                <img src={puerta} alt="Puerta" />
-                <img src={tanque} alt="Tanque" />
-                <img src={tanque2} alt="Tanque2" />
-                <img src={cable} alt="Cable" />
+                <div className="container">  
+                <div className="caja"> 
                 <img src={llave} alt="Llave" />
                 <img src={agua} alt="Agua" />
-            </main>
+                <img src={tanque} alt="Tanque" />
+                </div>
+                <div className="cajas">  
+                <img src={puerta} alt="Puerta" />
+                </div>
+                <div className="cable"> 
+                <img src={cable} alt="Cable" />
+                </div>
+                </div>
+               
+            
         )
     }
 }

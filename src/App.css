@@ -75,7 +75,7 @@ main {
   max-width: 30rem;
   margin: auto;
   margin-top: 2rem;
-  position: relative;
+  position: left ;
 }
 
 /* FORM */
@@ -226,14 +226,14 @@ footer {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
-img {
-  left: 50%;
-  position: fixed;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transform-origin: center center;
-  max-width: 400px;
-}
+ .container {
+   
+   display: grid;
+   grid-template-columns: auto auto auto auto auto auto;
+   width: 1200px;
+   height: 1200px;
+ }
+
 footer * {
   color: var(--red);
 }
@@ -245,4 +245,23 @@ footer p {
 
 footer small {
   margin-bottom: 0.25rem;
+}
+
+.caja {
+  grid-row:  1;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+}
+.cajas {
+  grid-column:  span 2;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.cable {
+  grid-column:  span 2;
+  display: flex;
+  justify-content: right;
 }
