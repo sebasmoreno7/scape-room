@@ -1,7 +1,10 @@
 import React from 'react';
-
+import '../App.css';
+import error from '../images/404.jpg';
 const Error = () =>
-    
-        <h1>404</h1>
 
+                <body className="body"> 
+                <img src={error} alt="error"></img>
+        
+                </body>
 export default Error;

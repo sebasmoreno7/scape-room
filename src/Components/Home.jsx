@@ -1,27 +1,24 @@
 
 import React, { Component } from 'react';
-import Cuarto from './Cuarto';
+import '../App.css';
 class Casa extends Component {
-    render(){
+    
         
+         handleClick(){ 
+            console.log('The link was clicked.');  
+        }
+            
+        render(){
         return( 
             <main> 
-            <form>
-                <div className="row">
-                    
-                    <div className="form-group col-md-8">
-                        <input type="text" className="form-control
-                        form-control-lg" placeholder="Tu nombre" />
-                    </div>
-                
-                </div>
-            </form>
-            <button type="button" onClick={Cuarto}>
-            Start
-        </button>
+                <body > 
+                <a className="ayuda" href="/cuarto1">Empezar</a>
+                <button onClick={this.handleClick}>buenas</button>
+            </body>
         </main>
         )
     }
 }
+
 
 export default Casa;

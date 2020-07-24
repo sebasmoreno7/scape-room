@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
 import tanque from '../images/tanque.png';
-import tanque2 from '../images/tanque-vacio.png';
-import borde from '../images/borde.png';
 import puerta from '../images/puerta.png';
 import cable from '../images/cable.png';
 import llave from '../images/fondo.png';
@@ -12,7 +10,9 @@ class Cuarto extends Component{
         return(
                 <div className="container">  
                 <div className="caja"> 
+                <div className="llave"> 
                 <img src={llave} alt="Llave" />
+                </div>
                 <img src={agua} alt="Agua" />
                 <img src={tanque} alt="Tanque" />
                 </div>

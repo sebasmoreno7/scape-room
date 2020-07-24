@@ -231,7 +231,7 @@ footer {
    display: grid;
    grid-template-columns: auto auto auto auto auto auto;
    width: 1200px;
-   height: 1200px;
+   height: 1000px;
  }
 
 footer * {
@@ -253,6 +253,11 @@ footer small {
   justify-content: left;
   flex-direction: column;
 }
+.llave {
+  position: absolute;
+  left: 180px;
+  top: 90px;
+}
 .cajas {
   grid-column:  span 2;
   display: flex;
@@ -264,4 +269,59 @@ footer small {
   grid-column:  span 2;
   display: flex;
   justify-content: right;
+}
+.container_2{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  width: 1200px;
+  height: 1000px;
+}
+.caja_2 {
+  grid-row: 1;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.puerta{
+  grid-column: span 5;
+  display: flex;
+  justify-content: right;
+  position: absolute;
+  left: 750px;
+}
+.tabla {
+  position: absolute;
+  left: 2px;
+  bottom: 250px;
+
+}
+.tabla_1 {
+  position: absolute;
+  bottom: 250px;
+
+}
+.cajita {
+  position: absolute;
+  top: 360px;
+  left: 200px;
+}
+.martillo {
+  position: absolute;
+  left: 180px;
+  bottom: 400px;
+}
+.mesa {
+  position: absolute;
+  top: 305px;
+}
+.body {
+  background-image: url("https://planoinformativo.com/stock12/image/error-404.jpg");
+  background-color: #cccccc;
+}
+.ayuda {
+  font-size: 8rem;
+  background: transparent;
+
+  color: black;
 }
