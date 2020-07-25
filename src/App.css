@@ -320,9 +320,13 @@ footer small {
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSf5r9qVXEBPYxU9AIcAt7NR9C0AAFQo3VdwA&usqp=CAU") ;
 }
 .ayuda {
+  width: 100vw;
+  height: 100vh;
   background-color: black;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 [hidden]{
   display: none;
@@ -339,7 +343,7 @@ footer small {
   top: 200px;
 }
  .inicio a{
-   background-color: #f5fcf6;
+   background-color: gray;
    width: 200px;
    height: 200px;
    font-family: 'Times New Roman', Times, serif;
@@ -351,4 +355,64 @@ footer small {
   position: absolute;
   left: 520px;
   bottom: 500px;
+}
+.perdio {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAAD+CAMAAABWbIqvAAAAA1BMVEUANJdyO8jKAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8GxXIAARdOqd4AAAAASUVORK5CYII=") ;
+}
+.perdio h2{
+  position: absolute;
+  left: 300px;
+  top: 200px;
+}
+.perdio button{
+  position: absolute;
+  left: 600px;
+  top: 350px;
+  height: 22px;
+  margin-right: 8rem;
+  border-color: green;
+}
+.clave {
+  background-image: url("https://i.pinimg.com/736x/6b/85/4d/6b854d6ba1c432a0129a84a93be32ad0.jpg") ;
+}
+
+.clave h2 {
+  position: absolute;
+  left: 200px;
+  top: 200px;
+}
+.clave input {
+  position: absolute;
+  left: 580px;
+  top: 370px;
+  width: 5vw;
+  height: 5vh;
+  margin-right: 8rem;
+  background-color:white;
+}
+.gano {
+  background-image: url("https://i.pinimg.com/originals/c0/cb/4c/c0cb4c3549144fe24c69b8e5a1c3bcb3.jpg") ;
+}
+
+.gano h1 {
+  position: absolute;
+  left: 150px;
+  bottom: 500px;
+  
+}
+
+.gano h2 {
+  color: black;
+  position: absolute;
+  left: 350px;
+  bottom: 400px;
+}
+.gano button{
+  position: absolute;
+  left: 600px;
+  top: 350px;
+  height: 22px;
+  margin-right: 8rem;
+  color: blue;
+  border-color: green;
 }

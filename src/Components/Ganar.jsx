@@ -11,12 +11,16 @@ class Ganar extends Component {
     
     render(){
         return(
-            <div>
-                <title>Felicidades, pudiste resolver los mini acertijos de las habitaciones</title>
-                <h1>Proximamente tendremos nuevos retos</h1>
+            <figure className="gano"> 
+            <div className="container">
+                <h1>Felicidades, pudiste resolver los mini acertijos de las habitaciones.
+                Proximamente tendremos nuevos retos
+                </h1>
+                
                 <h2>Si quieres volver a jugar oprime el boton</h2>
                 <button onClick={()=> this.abrirPuerta()}>Play</button>
             </div>
+            </figure>
         )
     }
 }

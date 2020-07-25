@@ -12,18 +12,18 @@ class Clave extends Component{
         }
     render(){
     return( 
-        <body className="ayuda"> 
-        <main className="nuevo"> 
-            <h1>Para que puedas abrir la caja y obtener la llave para salir de la habitación, 
-                            tienes que resolver éste problema:
-                    -4 * 3 * 5 + 2 * 8 - 3 * 7
-            </h1>
+        <figure className="clave"> 
+        <div className="container"> 
+            <h2>Para que puedas abrir la caja y obtener la llave para salir de la habitación, 
+                            tienes que resolver el siguiente problema:
+                      (-4 * 3 * 5 + 2 * 8 - 3 * 7)
+            </h2>
             <input
             type="text" onChange={this.claveFinal}> 
             </input>
             
-    </main>
-    </body>
+    </div>
+    </figure>
     )
 }
 }
