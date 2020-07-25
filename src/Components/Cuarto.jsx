@@ -9,7 +9,8 @@ import Perder from './Perder';
 const initialState = {
     mano: '',
     perder: true,
-    show: true
+    show: true,
+    llave: true
 }
 
 class Cuarto extends Component{
@@ -18,30 +19,37 @@ class Cuarto extends Component{
            if (this.mano === '') {
                this.setState(
                    {
-                         mano: 'llave',
+                     mano: 'llave',
                     })
-                }
-                this.props.history.push(
-                    "/perder"
-                )
+                      
+                }  console.log("sdvsc")
     }
-    
+    abrirPuerta = () => {
+        if (this.state.llave === false) {
+            this.props.history.push(
+                "/cuarto2"
+            )}
+    }
     primeraPerdida = () => {
-
-    }
+        if (this.state.show === true)
+        this.props.history.push(
+            "/perder"
+        )
+        }
     render() {
         return( 
             <figure> 
                 <div className="container">  
                 <div className="caja"> 
-                <div className="llave" > 
-                <img src={llave} alt="Llave" onClick={() => this.agarrarClick()}/>
+                <div className="llave" onClick={()=> this.primeraPerdida()}> 
+                <img src={llave} alt="Llave" onClick={() => {this.setState({llave: !this.state.llave})}} 
+                hidden={!this.state.llave} />
                 </div>
-                <img src={agua} alt="Agua" onClick={()=> this.primeraPerdida()} />
+                <img src={agua} alt="Agua"  />
                 <img src={tanque} alt="Tanque" />
                 </div>
                 <div className="cajas" >  
-                <img src={puerta} alt="Puerta" onClick=""/>
+                <img src={puerta} alt="Puerta" onClick={() => this.abrirPuerta()} />
                 </div>
                 <div className="cable" onClick={()=>{this.setState({show: !this.state.show})}} 
                 hidden={!this.state.show}> 
