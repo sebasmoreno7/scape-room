@@ -7,7 +7,13 @@ import puerta from '../images/puerta-1.png';
 import serrucho from '../images/prop-2.png';
 import tabla from '../images/tabla.png';
 import tabla_3 from '../images/tabla-3.png';
+const initialState = {
+    mano: '',
+    clave: false
+}
 class CuartoNext extends Component{
+    state = initialState
+
     render() {
         return(
             <figure> 
@@ -15,10 +21,10 @@ class CuartoNext extends Component{
                 <div className="caja_2"> 
                 
                 <div className="cajita"> 
-                <img src={caja} alt="Caja" />
+                <img src={caja} alt="Caja" onClick=""/>
                 </div>
                 <div className="martillo"> 
-                <img src={martillo} alt="Martillo" />
+                <img src={martillo} alt="Martillo" onClick="" />
                 <img src={serrucho} alt="Serrucho" />
                 </div>
                 <div className="mesa"> 
@@ -28,12 +34,12 @@ class CuartoNext extends Component{
 
 
                 <div className="puerta"> 
-                <img src={puerta} alt="Puerta-1" />
+                <img src={puerta} alt="Puerta-1" onClick="" />
                 <div className="tabla"> 
-                <img src={tabla} alt="Tabla" />
+                <img src={tabla} alt="Tabla" onClick="" />
                 </div>
                 <div className="tabla_1"> 
-                <img src={tabla_3} alt="Tabla_3" />
+                <img src={tabla_3} alt="Tabla_3" onClick="" />
                 </div>
                 
                 </div>

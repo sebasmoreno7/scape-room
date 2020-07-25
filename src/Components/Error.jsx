@@ -3,8 +3,8 @@ import '../App.css';
 import error from '../images/404.jpg';
 const Error = () =>
 
-                <body className="body"> 
+                <div className="ayuda" > 
                 <img src={error} alt="error"></img>
         
-                </body>
+                </div>
 export default Error;

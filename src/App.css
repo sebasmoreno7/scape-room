@@ -249,26 +249,28 @@ footer small {
 
 .caja {
   grid-row:  1;
-  display: flex;
-  justify-content: left;
-  flex-direction: column;
+  position: absolute;
+  width: 200px;
+
+
 }
 .llave {
   position: absolute;
-  left: 180px;
+  left: 115px;
   top: 90px;
 }
 .cajas {
   grid-column:  span 2;
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  left: 450px;
   
 }
 
 .cable {
   grid-column:  span 2;
-  display: flex;
-  justify-content: right;
+  position: absolute;
+  left: 950px;
+  top: -100px;
 }
 .container_2{
   display: grid;
@@ -315,13 +317,11 @@ footer small {
   position: absolute;
   top: 305px;
 }
-.body {
-  background-image: url("https://planoinformativo.com/stock12/image/error-404.jpg");
-  background-color: #cccccc;
-}
 .ayuda {
-  font-size: 8rem;
-  background: transparent;
-
-  color: black;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+[hidden]{
+  display: none;
 }
