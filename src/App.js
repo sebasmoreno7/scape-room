@@ -6,6 +6,8 @@ import Cuarto from './Components/Cuarto';
 import Error from './Components/Error';
 import CuartoNext from './Components/CuartoNext';
 import Perder from './Components/Perder';
+import Clave from './Components/Clave';
+import Ganar from './Components/Ganar';
 class App extends Component {
   render(){
 
@@ -16,6 +18,8 @@ class App extends Component {
         <Route path="/cuarto1" exact component={Cuarto}></Route>
         <Route path="/cuarto2" exact component={CuartoNext}></Route>
         <Route path="/perder" exact component={Perder}></Route>
+        <Route path="/ganar" exact component={Ganar}></Route>
+        <Route path="/clave" exact component={Clave}></Route>
         <Route component={Error}></Route>
       </Switch>
       </BrowserRouter>

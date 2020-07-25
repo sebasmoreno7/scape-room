@@ -5,7 +5,6 @@ import puerta from '../images/puerta.png';
 import cable from '../images/cable.png';
 import llave from '../images/fondo.png';
 import agua from '../images/agua.png';
-import Perder from './Perder';
 const initialState = {
     mano: '',
     perder: true,

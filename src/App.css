@@ -60,10 +60,9 @@ header {
 
 
 h1 {
-  position: absolute;
   bottom: 1rem;
   left: 1rem;
-  color: green;
+  color: black;
   font-family: var(--font-serif);
   font-style: oblique;
   font-size: 4rem;
@@ -317,6 +316,9 @@ footer small {
   position: absolute;
   top: 305px;
 }
+.nuevo{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSf5r9qVXEBPYxU9AIcAt7NR9C0AAFQo3VdwA&usqp=CAU") ;
+}
 .ayuda {
   background-color: black;
   display: flex;
@@ -324,4 +326,29 @@ footer small {
 }
 [hidden]{
   display: none;
+}
+.casa{
+  background-image: url("https://www.publicdomainpictures.net/pictures/30000/velka/solid-orange-background.jpg") ;
+  
+}
+.inicio {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 600px;
+  top: 200px;
+}
+ .inicio a{
+   background-color: #f5fcf6;
+   width: 200px;
+   height: 200px;
+   font-family: 'Times New Roman', Times, serif;
+   color: #282c34;
+   
+
+}
+.xness {
+  position: absolute;
+  left: 520px;
+  bottom: 500px;
 }

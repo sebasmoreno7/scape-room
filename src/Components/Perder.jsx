@@ -4,7 +4,7 @@ class Perder extends Component {
     render() {
         return(
             <div>
-                <h1>Perdiste, no debiste oprimir eso antes que otra cosa</h1>
+                <h1>Perdiste, la llave mojada te electrocuta con el cable</h1>
             </div>
         )
     }
