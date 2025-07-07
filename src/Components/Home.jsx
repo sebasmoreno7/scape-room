@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import '../App.css';
+import Comments from './Comments';
 class Casa extends Component {
     
         
@@ -10,10 +11,11 @@ class Casa extends Component {
                 <figure className="casa"> 
                 <div className="container"> 
                     <h1 className="xness">XNESS ROOM</h1>
-                    <div className="inicio" > 
+                <div className="inicio" >
                 <a  href="/cuarto1">Empezar</a>
                 </div>
-            
+                <Comments />
+
             </div>
             </figure>
         )
