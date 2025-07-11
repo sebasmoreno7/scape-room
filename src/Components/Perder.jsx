@@ -1,26 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import '../App.css';
 
-class Perder extends Component {
-    abrirPuerta = () => {
-         
-        this.props.history.push(
-            "/cuarto1"
-        )}
-    render() {
-        return(
-            <figure className="perdio"> 
-                <div className="container"> 
-                <div className="perdio">
-                <h2>Perdiste, la llave mojada te electrocuta con el cable</h2>
-                <button onClick={()=> this.abrirPuerta()}>Play now</button>
-            </div>
-                </div>
-            
-            
-            </figure>
-            
-        )
-    }
-}
+const Perder = () => {
+  const history = useHistory();
+  const reiniciar = () => {
+    history.push('/cuarto1');
+  };
+
+  return (
+    <figure className="perdio">
+      <div className="container">
+        <div className="perdio">
+          <h2>Perdiste, la llave mojada te electrocuta con el cable</h2>
+          <button onClick={reiniciar}>Play now</button>
+        </div>
+      </div>
+    </figure>
+  );
+};
 
 export default Perder;

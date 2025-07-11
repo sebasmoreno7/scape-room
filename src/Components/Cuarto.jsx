@@ -1,63 +1,61 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import '../App.css';
 import tanque from '../images/tanque.png';
 import puerta from '../images/puerta.png';
 import cable from '../images/cable.png';
-import llave from '../images/fondo.png';
+import llaveImg from '../images/fondo.png';
 import agua from '../images/agua.png';
-const initialState = {
-    mano: '',
-    perder: true,
-    show: true,
-    llave: true
-}
 
-class Cuarto extends Component{
-    state = initialState
-    agarrarClick = () => { console.log("buyeasnasn")
-           if (this.mano === '') {
-               this.setState(
-                   {
-                     mano: 'llave',
-                    })
-                      
-                }  console.log("sdvsc")
+const Cuarto = () => {
+  const history = useHistory();
+  const [keyVisible, setKeyVisible] = useState(true);
+  const [showCable, setShowCable] = useState(true);
+  const [doorUnlocked, setDoorUnlocked] = useState(false);
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setKeyVisible(false);
+    setDoorUnlocked(true);
+  };
+
+  const abrirPuerta = () => {
+    if (doorUnlocked) {
+      history.push('/cuarto2');
     }
-    abrirPuerta = () => {
-        if (this.state.llave === false) {
-            this.props.history.push(
-                "/cuarto2"
-            )}
+  };
+
+  const primeraPerdida = () => {
+    if (showCable) {
+      history.push('/perder');
     }
-    primeraPerdida = () => {
-        if (this.state.show === true)
-        this.props.history.push(
-            "/perder"
-        )
-        }
-    render() {
-        return( 
-            <figure> 
-                <div className="container">  
-                <div className="caja"> 
-                <div className="llave" onClick={()=> this.primeraPerdida()}> 
-                <img src={llave} alt="Llave" onClick={() => {this.setState({llave: !this.state.llave})}} 
-                hidden={!this.state.llave} />
-                </div>
-                <img src={agua} alt="Agua"  />
-                <img src={tanque} alt="Tanque" />
-                </div>
-                <div className="cajas" >  
-                <img src={puerta} alt="Puerta" onClick={() => this.abrirPuerta()} />
-                </div>
-                <div className="cable" onClick={()=>{this.setState({show: !this.state.show})}} 
-                hidden={!this.state.show}> 
-                <img src={cable} alt="Cable"  />
-                </div>
-                </div>
-                </figure>
-            
-        )
-    }
-}
- export default Cuarto;
+  };
+
+  return (
+    <figure>
+      <div className="container">
+        <div className="caja">
+          <div className="llave" onClick={primeraPerdida}>
+            <img
+              src={llaveImg}
+              alt="Llave"
+              draggable
+              onDragStart={(e) => e.dataTransfer.setData('text/plain', 'llave')}
+              hidden={!keyVisible}
+            />
+          </div>
+          <img src={agua} alt="Agua" />
+          <img src={tanque} alt="Tanque" />
+        </div>
+        <div className="cajas" onDrop={handleDrop} onDragOver={(e) => e.preventDefault()}>
+          <img src={puerta} alt="Puerta" onClick={abrirPuerta} />
+        </div>
+        <div className="cable" onClick={() => setShowCable(!showCable)} hidden={!showCable}>
+          <img src={cable} alt="Cable" />
+        </div>
+      </div>
+    </figure>
+  );
+};
+
+export default Cuarto;

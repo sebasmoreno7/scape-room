@@ -1,30 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import '../App.css';
-import '../images/adivinador.png'
-class Clave extends Component{
+import '../images/adivinador.png';
 
-        claveFinal = (e) => {
-            console.log(e.target.value)
-            if (e.target.value === "-65") {
-                this.props.history.push(
-                    "/ganar"
-                )}
-        }
-    render(){
-    return( 
-        <figure className="clave"> 
-        <div className="container"> 
-            <h2>Para que puedas abrir la caja y obtener la llave para salir de la habitación, 
-                            tienes que resolver el siguiente problema:
-                      (-4 * 3 * 5 + 2 * 8 - 3 * 7)
-            </h2>
-            <input
-            type="text" onChange={this.claveFinal}> 
-            </input>
-            
-    </div>
+const Clave = () => {
+  const history = useHistory();
+  const claveFinal = (e) => {
+    if (e.target.value === '-65') {
+      history.push('/ganar');
+    }
+  };
+
+  return (
+    <figure className="clave">
+      <div className="container">
+        <h2>
+          Para que puedas abrir la caja y obtener la llave para salir de la
+          habitación, tienes que resolver el siguiente problema:
+          (-4 * 3 * 5 + 2 * 8 - 3 * 7)
+        </h2>
+        <input type="text" onChange={claveFinal} />
+      </div>
     </figure>
-    )
-}
-}
+  );
+};
+
 export default Clave;

@@ -1,26 +1,16 @@
-
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
-import Comments from './Comments';
-class Casa extends Component {
-    
-        
-       
-        render(){
-        return( 
-                <figure className="casa"> 
-                <div className="container"> 
-                    <h1 className="xness">XNESS ROOM</h1>
-                <div className="inicio" >
-                <a  href="/cuarto1">Empezar</a>
-                </div>
-                <Comments />
 
-            </div>
-            </figure>
-        )
-    }
-}
+const Home = () => (
+  <figure className="casa">
+    <div className="container">
+      <h1 className="xness">XNESS ROOM</h1>
+      <div className="inicio">
+        <Link to="/cuarto1">Empezar</Link>
+      </div>
+    </div>
+  </figure>
+);
 
-
-export default Casa;
+export default Home;
