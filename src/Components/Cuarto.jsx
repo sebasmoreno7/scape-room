@@ -15,6 +15,9 @@ const Cuarto = () => {
 
   const handleDrop = (e) => {
     e.preventDefault();
+    if (!e.dataTransfer || e.dataTransfer.getData('text/plain') !== 'llave' || !keyVisible) {
+      return;
+    }
     setKeyVisible(false);
     setDoorUnlocked(true);
   };
