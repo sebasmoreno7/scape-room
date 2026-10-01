@@ -1,24 +1,39 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
-import App from './App';
+import { MemoryRouter, Route, Switch } from 'react-router-dom';
+import Cuarto from './Components/Cuarto';
 
-it('muestra el boton de empezar', () => {
-  const { getByText } = render(
-    <MemoryRouter>
-      <App />
-    </MemoryRouter>
-  );
-  expect(getByText('Empezar')).toBeInTheDocument();
+const renderRoom = () => render(
+  <MemoryRouter initialEntries={['/cuarto1']}>
+    <Switch>
+      <Route path="/cuarto1" component={Cuarto} />
+      <Route path="/cuarto2" render={() => <div>Siguiente habitación</div>} />
+    </Switch>
+  </MemoryRouter>
+);
+
+const dropOnDoor = (door, item) => {
+  const event = new Event('drop', { bubbles: true, cancelable: true });
+  Object.defineProperty(event, 'dataTransfer', {
+    value: { getData: () => item }
+  });
+  fireEvent(door, event);
+};
+
+test('no abre la puerta sin una llave válida', () => {
+  const { getByAltText, queryByText } = renderRoom();
+
+  dropOnDoor(getByAltText('Puerta'), 'otro objeto');
+  fireEvent.click(getByAltText('Puerta'));
+
+  expect(queryByText('Siguiente habitación')).not.toBeInTheDocument();
 });
 
-it('no abre la puerta sin llave', () => {
-  const { getByAltText } = render(
-    <MemoryRouter initialEntries={["/cuarto1"]}>
-      <App />
-    </MemoryRouter>
-  );
+test('abre la puerta después de soltar la llave', () => {
+  const { getByAltText, getByText } = renderRoom();
+
+  dropOnDoor(getByAltText('Puerta'), 'llave');
   fireEvent.click(getByAltText('Puerta'));
-  // En esta version la puerta solo abre si esta desbloqueada
-  expect(window.location.pathname).not.toBe('/cuarto2');
+
+  expect(getByText('Siguiente habitación')).toBeInTheDocument();
 });
