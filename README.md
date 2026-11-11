@@ -1,19 +1,20 @@
-# Scape Room · React escape-room exercise
+# scape-room
 
-Historical React game prototype with routes for a home screen, two rooms, a key screen, and win/loss screens. The first room uses component state and drag-and-drop interaction to unlock a door. The repository includes local illustrations and styles.
+## Desarrollo y verificación
 
-## Stack
+Requiere Node >=22.12.0. La compilación usa Vite y las pruebas Vitest.
 
-React 16, React Router 5 and Create React App are declared in `package.json`. This is a learning project, not a maintained game or verified live deployment.
-
-## Explore locally
-
-From the repository root, these commands were checked with Node 20:
-
-```sh
-npm ci --legacy-peer-deps --ignore-scripts
-CI=true npm test -- --watch=false --runInBand
-NODE_OPTIONS=--openssl-legacy-provider npm run build
+```bash
+npm ci --ignore-scripts
+npm start
+npm test
+npm run build
+npm audit
 ```
 
-For local play, run `NODE_OPTIONS=--openssl-legacy-provider npm start`. The OpenSSL flag is needed by this historical Create React App/Webpack version on Node 20. It is a development workaround, not a deployment recommendation.
+El resultado de producción se conserva en `build/`. Las rutas de la aplicación
+y los recursos de `public/` se mantienen. Las variables públicas existentes
+`REACT_APP_*` siguen disponibles; nunca uses ese prefijo para secretos.
+
+La migración retira Create React App y su cadena de compilación sin mantenimiento.
+Las pruebas existentes comprueban el comportamiento de la aplicación.
